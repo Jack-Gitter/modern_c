@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// void quick_sort(int arr[], int left, int right) {}
+void quick_sort(int arr[], int left, int right) {}
+
 int* merge_sort_2(int arr[], int left, int right) {
   if (left >= right) {
     if (left > right) {
@@ -106,21 +107,18 @@ int main() {
   bool is_sorted = sorted(arr, 5);
   printf("%d\n", is_sorted);*/
 
-  int arr2[5] = {
-      5,
-      4,
-      3,
-      2,
-  };
-  int* s = merge_sort_2(arr2, 0, 3);
-  for (int i = 0; i < 4; i++) {
-    printf("%d\n", s[i]);
-  }
-
-  // quick_sort(arr2, 0, 4);
-  // for (int i = 0; i < 5; i++) {
-  //   printf("%d\n", arr2[i]);
+  // int* s = merge_sort_2(arr2, 0, 3);
+  // for (int i = 0; i < 4; i++) {
+  //   printf("%d\n", s[i]);
   // }
+
+  int arr2[5] = {
+      5, 4, 3, 2, 1,
+  };
+  quick_sort(arr2, 0, 4);
+  for (int i = 0; i < 5; i++) {
+    printf("%d\n", arr2[i]);
+  }
   // bool is_sorted_2 = sorted(arr2, 5);
   // printf("%d\n", is_sorted_2);
 }
