@@ -4,8 +4,10 @@
 // void quick_sort(int arr[], int left, int right) {}
 // merge_sort_pointer_ret()
 int* merge_sort_2(int arr[], int left, int right) {
-
   if (left >= right) {
+    if (left > right) {
+      return NULL;
+    }
     int* out = malloc(sizeof(int));
     if (left == right) {
       out[0] = arr[left];
@@ -105,9 +107,14 @@ int main() {
   bool is_sorted = sorted(arr, 5);
   printf("%d\n", is_sorted);*/
 
-  int arr2[5] = {5, 4, 3, 2, 1};
-  int* s = merge_sort_2(arr2, 0, 4);
-  for (int i = 0; i < 5; i++) {
+  int arr2[5] = {
+      5,
+      4,
+      3,
+      2,
+  };
+  int* s = merge_sort_2(arr2, 0, 3);
+  for (int i = 0; i < 4; i++) {
     printf("%d\n", s[i]);
   }
 
