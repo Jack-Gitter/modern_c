@@ -64,7 +64,7 @@ int main() {
   printf("%d\n", is_sorted);*/
 
   int arr2[5] = {5, 4, 3, 2, 1};
-  quick_sort(arr2, 0, 4);
+  // quick_sort(arr2, 0, 4);
   for (int i = 0; i < 5; i++) {
     printf("%d\n", arr2[i]);
   }
