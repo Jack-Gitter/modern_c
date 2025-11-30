@@ -47,11 +47,18 @@ void merge_sort(int arr[], int left, int right) {
   free(right_arr);
 }
 
+bool sorted(int arr[], int len) {
+  for (int i = 0; i < len - 1; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
 int main() {
   int arr[5] = {5, 4, 3, 2, 1};
   merge_sort(arr, 0, 4);
-
-  for (int i = 0; i < 5; i++) {
-    printf("%d\n", arr[i]);
-  }
+  bool is_sorted = sorted(arr, 5);
+  printf("%d\n", is_sorted);
 }
