@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void quick_sort(int arr[], int left, int right) {}
 void merge_sort(int arr[], int left, int right) {
 
   if (left >= right) {
@@ -57,8 +58,16 @@ bool sorted(int arr[], int len) {
 }
 
 int main() {
-  int arr[5] = {5, 4, 3, 2, 1};
+  /*int arr[5] = {5, 4, 3, 2, 1};
   merge_sort(arr, 0, 4);
   bool is_sorted = sorted(arr, 5);
-  printf("%d\n", is_sorted);
+  printf("%d\n", is_sorted);*/
+
+  int arr2[5] = {5, 4, 3, 2, 1};
+  quick_sort(arr2, 0, 4);
+  for (int i = 0; i < 5; i++) {
+    printf("%d\n", arr2[i]);
+  }
+  // bool is_sorted_2 = sorted(arr2, 5);
+  // printf("%d\n", is_sorted_2);
 }
