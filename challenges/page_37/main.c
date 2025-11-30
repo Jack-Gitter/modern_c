@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void quick_sort(int arr[], int left, int right) {}
+// void quick_sort(int arr[], int left, int right) {}
 void merge_sort(int arr[], int left, int right) {
 
   if (left >= right) {
