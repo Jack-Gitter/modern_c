@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 // void quick_sort(int arr[], int left, int right) {}
-// merge_sort_pointer_ret()
 int* merge_sort_2(int arr[], int left, int right) {
   if (left >= right) {
     if (left > right) {
