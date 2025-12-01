@@ -134,23 +134,29 @@ bool sorted(int arr[], int len) {
 }
 
 int main() {
-  /*int arr[5] = {5, 4, 3, 2, 1};
+  // merge sort void return
+  int arr[5] = {5, 4, 3, 2, 1};
   merge_sort(arr, 0, 4);
-  bool is_sorted = sorted(arr, 5);
-  printf("%d\n", is_sorted);*/
+  bool merge_sort_is_sorted = sorted(arr, 5);
+  printf("merge sort 1 is sorted?:\n");
+  printf("%d\n", merge_sort_is_sorted);
 
-  // int* s = merge_sort_2(arr2, 0, 3);
-  // for (int i = 0; i < 4; i++) {
-  //   printf("%d\n", s[i]);
-  // }
-
+  // merge sort int* return
   int arr2[5] = {
       5, 4, 3, 2, 1,
   };
-  quick_sort(arr2, 0, 4);
-  for (int i = 0; i < 5; i++) {
-    printf("%d\n", arr2[i]);
-  }
-  // bool is_sorted_2 = sorted(arr2, 5);
-  // printf("%d\n", is_sorted_2);
+  int* merge_sort_2_res = merge_sort_2(arr2, 0, 4);
+  bool merge_sort_2_is_sorted = sorted(merge_sort_2_res, 5);
+  printf("merge sort 2 is sorted?:\n");
+  printf("%d\n", merge_sort_2_is_sorted);
+  free(merge_sort_2_res);
+
+  // quick sort
+  int arr3[5] = {
+      5, 4, 3, 2, 1,
+  };
+  quick_sort(arr3, 0, 4);
+  bool quick_sort_is_sorted = sorted(arr3, 5);
+  printf("quick sort is sorted?:\n");
+  printf("%d\n", quick_sort_is_sorted);
 }
