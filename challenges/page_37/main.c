@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// inclusive range
 void quick_sort(int arr[], int left, int right) {
   if (left >= right) {
     return;
@@ -35,8 +34,6 @@ void quick_sort(int arr[], int left, int right) {
   quick_sort(arr, new_mid + 1, right);
   free(new_arr);
 }
-
-//[1,2,3,4,5]
 
 int* merge_sort_2(int arr[], int left, int right) {
   if (left >= right) {
