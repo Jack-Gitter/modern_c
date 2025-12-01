@@ -1,7 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void quick_sort(int arr[], int left, int right) {}
+// inclusive range
+void quick_sort(int arr[], int left, int right) {
+  if (left >= right) {
+    return;
+  }
+
+  int pivot_idx = (right + left) / 2;
+  int* new_arr = malloc(sizeof(int) * (right - left + 1));
+
+  int new_arr_idx = 0;
+  for (int i = left; i <= right; i++) {
+    if (arr[i] < arr[pivot_idx]) {
+      new_arr[new_arr_idx++] = arr[i];
+    }
+  }
+
+  int new_mid = left + new_arr_idx;
+  new_arr[new_arr_idx++] = arr[pivot_idx];
+
+  for (int i = left; i <= right; i++) {
+    if (i != pivot_idx && arr[i] >= arr[pivot_idx]) {
+      new_arr[new_arr_idx++] = arr[i];
+    }
+  }
+
+  new_arr_idx = 0;
+  for (int i = left; i <= right; i++) {
+    arr[i] = new_arr[new_arr_idx++];
+  }
+
+  quick_sort(arr, left, new_mid);
+  quick_sort(arr, new_mid + 1, right);
+  free(new_arr);
+}
+
+//[1,2,3,4,5]
 
 int* merge_sort_2(int arr[], int left, int right) {
   if (left >= right) {
