@@ -21,13 +21,17 @@ void find_replace(size_t arr[100], int elem_idx, int new_root) {
   }
 }
 
+// finds the root of search, replaces the second tree with them
 void find_compress(size_t arr[100], int search_idx, int replace_idx) {
   size_t root = find_parent(arr, search_idx);
   find_replace(arr, replace_idx, root);
 }
 
 void u(size_t arr[100], int left, int right) {
-  find_compress(arr, left, int replace_idx)
+  size_t left_parent = find_parent(arr, left);
+  size_t right_parent = find_parent(arr, right);
+  find_compress(arr, left, right);
+  arr[right_parent] = left_parent;
 }
 
 int main() {
